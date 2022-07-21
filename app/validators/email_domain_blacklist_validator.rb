@@ -1,6 +1,7 @@
+# frozen_string_literal: true
+
 class EmailDomainBlacklistValidator < ActiveModel::Validator
   def validate(record)
-
     blacklist = ['gmail.com', 'yahoo.com', 'hotmail.com']
 
     str = record.email
