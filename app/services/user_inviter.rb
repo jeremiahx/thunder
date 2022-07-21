@@ -7,12 +7,11 @@ class UserInviter
     @to_address = to_address
     @subject = subject
     @body = body
-
   end
 
   def call
     options = [true, false]
     options[rand(0..1)]
-    false
+    true
   end
 end

@@ -1,24 +1,46 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# ⚡ Thunder ⚡ by 🌴 Tropic 🌴
 
-Things you may want to cover:
+Welcome to Thunder by Tropic. The ultimate user creation tool. Follow the instructions below for installation.
 
-* Ruby version
 
-* System dependencies
+## Run Locally
 
-* Configuration
+Go to the project directory
 
-* Database creation
+```bash
+  cd thunder
+```
 
-* Database initialization
+Install dependencies
 
-* How to run the test suite
+```bash
+  bundle install
+  yarn install
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Start the server
 
-* Deployment instructions
+Thunder utilizes the latest in Rails development tools. No longer do we do just `rails c` but now where do this latest sexyness:
+```bash
+./bin/dev
+```
 
-* ...
+## Running Tests
+
+Testing? Who needs it?
+
+We do of course because we like to sleep better at night.
+
+```bash
+  rails spec
+```
+
+
+## 🚀 About Me
+My name is J.J. Merrick and I am the composer of this wonderfully non-useful applcation.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+

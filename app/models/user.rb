@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: users
@@ -17,7 +19,7 @@ class User < ApplicationRecord
 
   def display_name
     if first_name.blank? || last_name.blank?
-      email[0,2].upcase
+      email[0, 2].upcase
     else
       "#{first_name} #{last_name}"
     end
@@ -25,11 +27,9 @@ class User < ApplicationRecord
 
   def initials
     if first_name.blank? || last_name.blank?
-      email[0,2].upcase
+      email[0, 2].upcase
     else
-      "#{first_name[0,1]}#{last_name[0,1]}".upcase
+      "#{first_name[0, 1]}#{last_name[0, 1]}".upcase
     end
   end
-
-
 end
