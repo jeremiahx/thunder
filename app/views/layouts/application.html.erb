@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="h-full bg-gray-100">
   <head>
     <title>Thunder</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -9,11 +9,18 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%#= Turn off turbolinks since it is being bad %>
+    <meta name="turbo-visit-control" content="reload">
   </head>
-
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+  <body class="h-full">
+    <main class="max-w-7xl mx-auto sm:px-6 lg:px-8 lg:py-8">
+      <%= turbo_frame_tag "modal" %>
       <%= yield %>
     </main>
+
+
+<%= turbo_frame_tag "alerts" do %>
+  <%= render partial: "layouts/alerts" %>
+<% end %>
   </body>
 </html>

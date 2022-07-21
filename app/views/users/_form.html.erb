@@ -1,0 +1,74 @@
+<div data-controller="modal" data-modal-allow-background-close="false">
+
+<!-- This example requires Tailwind CSS v2.0+ -->
+<div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true" data-modal-target="container" data-action="click->modal#closeBackground keyup@window->modal#closeWithKeyboard" >
+  <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+
+  <div class="fixed z-10 inset-0 overflow-y-auto">
+    <div class="flex items-end sm:items-center justify-center min-h-full p-4 sm:p-0">
+      <div class="space-y-6 sm:px-6 lg:px-0 lg:col-span-9 max-w-xl ">
+        <section aria-labelledby="create-user-heading">
+          <%= simple_form_for @user do |f| %>
+
+            <div class="shadow sm:rounded-md sm:overflow-hidden ">
+              <div class="bg-white ">
+
+                <div class="border-b-2 py-6 px-4 sm:p-6">
+                  <h2 id="create-user-heading" class="text-lg leading-6 font-medium text-gray-500">Create New User</h2>
+                </div>
+
+
+                <%= render partial: "errors", object: @user %>
+
+
+                <div class="py-6 px-4 sm:p-6">
+                  <div class=" grid grid-cols-4 gap-6">
+                    <div class="col-span-4 sm:col-span-2">
+                      <%= f.input :first_name, input_html: {class: 'mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-gray-900 focus:border-gray-900 sm:text-sm'}, label_html: { class: 'block text-sm font-medium text-gray-700' } %>
+                      <%#= form.text_field :first_name, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-gray-900 focus:border-gray-900 sm:text-sm"  %>
+                    </div>
+
+                    <div class="col-span-4 sm:col-span-2">
+                      <%= f.input :last_name, input_html: {class: 'mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-gray-900 focus:border-gray-900 sm:text-sm'}, label_html: { class: 'block text-sm font-medium text-gray-700' } %>
+                    </div>
+                  </div>
+
+                  <div class="mt-6 grid grid-cols-1 gap-6">
+                    <div class="col-span-8 sm:col-span-2">
+                      <%= f.input :email, as: :email, required: true, input_html: {class: 'mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-gray-900 focus:border-gray-900 sm:text-sm'}, label_html: { class: 'block text-sm font-medium text-gray-700' } %>
+                    </div>
+                  </div>
+
+                  <div class="mt-6 grid grid-cols-1 gap-6">
+                    <div class="col-span-8 sm:col-span-2">
+                      <div class="relative flex items-start">
+                        <div class="flex items-center h-5">
+                          <%= f.input_field :send_invite, as: :boolean, class: "focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded" %>
+                        </div>
+                        <div class="ml-3 text-sm">
+                          <label for="comments" class="font-medium text-gray-700">Send Invite</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                </div>
+              </div>
+              <div class="px-4 py-3 bg-gray-50 text-right sm:px-6 border-t-2  flex justify-between">
+                <%= link_to "Cancel", users_index_path, class:"bg-white border border-transparent rounded-md shadow-sm py-2 px-4 inline-flex justify-center text-sm font-medium hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" %>
+
+
+                <button type="submit" class="bg-indigo-800 border border-transparent rounded-md shadow-sm py-2 px-4 inline-flex justify-center text-sm font-medium text-white hover:bg-indigo-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-900">Create
+                  User
+                </button>
+              </div>
+            </div>
+          <% end %>
+        </section>
+      </div>    </div>
+  </div>
+</div>
+
+</div>

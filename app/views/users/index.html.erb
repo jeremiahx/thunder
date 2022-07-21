@@ -1,0 +1,31 @@
+<!-- This example requires Tailwind CSS v2.0+ -->
+<div class="px-4 sm:px-6 lg:px-8">
+  <!-- This example requires Tailwind CSS v2.0+ -->
+<p class="border-red-500 text-red-500 mt-2 text-red-500 text-xs italic"></p>
+
+  <div class="mt-8 flex flex-col">
+    <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
+      <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
+        <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
+          <div class="bg-white px-4 py-5 border-b border-gray-200 sm:px-6">
+            <div class="-ml-4 -mt-2 flex items-center justify-between flex-wrap sm:flex-nowrap">
+              <div class="ml-4 mt-2">
+                <h3 class="text-lg leading-6 font-medium text-gray-900">Users</h3>
+              </div>
+              <div class="ml-4 mt-2 flex-shrink-0">
+                <%= link_to "Create New User", new_users_path, data: { turbo_frame: 'modal' }, class: "relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+
+              </div>
+            </div>
+          </div>
+<%= turbo_frame_tag "user_listing" do %>
+
+              <%= render partial: "user_list", locals: { users: @users }%>
+            <!-- More people... -->
+
+<% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
