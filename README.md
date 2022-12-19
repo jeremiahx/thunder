@@ -3,6 +3,8 @@
 
 Welcome to Thunder by Tropic. The ultimate user creation tool. Follow the instructions below for installation.
 
+This was created by following [these specs](docs/specs.md)
+
 
 ## Run Locally
 
