@@ -15,40 +15,40 @@ require "rails_helper"
 
 RSpec.describe User, type: :model do
   context "validation tests" do
-    it "should ensure email is present" do
-      user = User.new(email: nil).save
-      expect(user).to eq(false)
+    it "ensures email is present" do
+      user = described_class.new(email: nil).save
+      expect(user).to be(false)
     end
 
-    it "should ensure email is valid email" do
-      user = User.new(email: "emailexample.com").save
-      expect(user).to eq(false)
+    it "ensures email is valid email" do
+      user = described_class.new(email: "emailexample.com").save
+      expect(user).to be(false)
     end
 
-    it "should ensure email is unique" do
-      user1 = User.new(email: "EMAIL@example.com").save
-      user2 = User.new(email: "email@example.com").save
+    it "ensures email is unique" do
+      described_class.new(email: "EMAIL@example.com").save
+      user2 = described_class.new(email: "email@example.com").save
       expect(user2).to eq(user2)
     end
 
-    it "should ensure email is not gmail" do
-      user = User.new(email: "bob@gmail.com").save
-      expect(user).to eq(false)
+    it "ensures email is not gmail" do
+      user = described_class.new(email: "bob@gmail.com").save
+      expect(user).to be(false)
     end
 
-    it "should ensure email is not hotmail" do
-      user = User.new(email: "bob@hotmail.com").save
-      expect(user).to eq(false)
+    it "ensures email is not hotmail" do
+      user = described_class.new(email: "bob@hotmail.com").save
+      expect(user).to be(false)
     end
 
-    it "should ensure email is not yahoo" do
-      user = User.new(email: "bob@yahoo.com").save
-      expect(user).to eq(false)
+    it "ensures email is not yahoo" do
+      user = described_class.new(email: "bob@yahoo.com").save
+      expect(user).to be(false)
     end
 
-    it "should save successfully" do
-      user = User.new(first_name: "First", last_name: "Last", email: "email@example.com").save
-      expect(user).to eq(true)
+    it "saves successfully" do
+      user = described_class.new(first_name: "First", last_name: "Last", email: "email@example.com").save
+      expect(user).to be(true)
     end
   end
 end
