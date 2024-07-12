@@ -2,15 +2,15 @@
 
 module AlertHelper
   def alert_header(key)
-    if key == 'error'
-      'Oh No!'
+    if key == "error"
+      "Oh No!"
     else
-      'Success!'
+      "Success!"
     end
   end
 
   def alert_svg(key)
-    check_circle =  <<~EOS
+    check_circle = <<~EOS
       <!-- Heroicon name: outline/check-circle -->
                   <svg class="h-6 w-6 text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -23,7 +23,7 @@ module AlertHelper
       </svg>
     EOS
 
-    if key == 'error'
+    if key == "error"
       error_circle.html_safe
     else
       check_circle.html_safe

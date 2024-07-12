@@ -15,7 +15,7 @@ class User < ApplicationRecord
   attr_accessor :send_invite
 
   validates_with EmailDomainBlacklistValidator
-  validates :email, presence: true, uniqueness: { case_sensitive: false }, email: true
+  validates :email, presence: true, uniqueness: {case_sensitive: false}, email: true
 
   def display_name
     if first_name.blank? || last_name.blank?
