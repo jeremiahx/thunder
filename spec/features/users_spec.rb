@@ -4,8 +4,7 @@ require "rails_helper"
 
 RSpec.feature "Users", type: :feature do
   context "create new user" do
-    scenario "should be successful" do
-      skip "This was working but I am giving up"
+    xscenario "should be successful" do
       visit root_path
       click_link "Create New User"
 
@@ -15,7 +14,7 @@ RSpec.feature "Users", type: :feature do
         fill_in "user_email", with: "bob@example.com"
       end
       click_button "Create User"
-      expect(rendered).to have_content "Success"
+      expect(page).to have_content "Success"
     end
 
     scenario "should fail" do

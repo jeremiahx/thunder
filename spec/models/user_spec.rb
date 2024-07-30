@@ -32,12 +32,12 @@ RSpec.describe User, type: :model do
     end
 
     it "ensures email is not gmail" do
-      user = described_class.new(email: "bob@gmail.com").save
+      user = described_class.new(email: "bob@GMaiL.com").save
       expect(user).to be(false)
     end
 
     it "ensures email is not hotmail" do
-      user = described_class.new(email: "bob@hotmail.com").save
+      user = described_class.new(email: "bob@HoTMaiL.com").save
       expect(user).to be(false)
     end
 
